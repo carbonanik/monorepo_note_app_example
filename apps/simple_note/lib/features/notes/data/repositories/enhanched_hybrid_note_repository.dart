@@ -1,4 +1,6 @@
 // lib/features/notes/data/repositories/enhanced_hybrid_notes_repository.dart
+import 'dart:async';
+
 import 'package:simple_note/core/sync/sync_service.dart';
 import 'package:simple_note/features/notes/data/datasources/local/notes_local_datasource.dart';
 import 'package:simple_note/features/notes/data/datasources/remote/notes_network_datasource.dart';
@@ -26,7 +28,7 @@ class EnhancedHybridNotesRepository implements NotesRepository {
     final localEntities = localModels.map((m) => m.toEntity()).toList();
 
     // 2. Trigger background sync (don't await)
-    _backgroundSync();
+    unawaited(_backgroundSync());
 
     return localEntities;
   }

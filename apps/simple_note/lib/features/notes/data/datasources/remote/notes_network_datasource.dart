@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:simple_note/core/network/exception/api_exception.dart';
 import 'package:simple_note/features/notes/data/models/network_note_model.dart';
 import 'package:simple_note/features/notes/data/datasources/remote/notes_api_service.dart';
 
